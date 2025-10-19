@@ -1,12 +1,14 @@
-#define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
-#include "catch.hpp"
+#include <cassert>
 #include "question3.h"
 
-TEST_CASE("Verify Test Configuration", "verification") {
-	REQUIRE(true == true);
-}
-
-TEST_CASE("test")
-{
-	REQUIRE(test_config() == true);
+int main() {
+    assert(get_fib_number(1) == 1);
+    assert(get_fib_number(2) == 1);
+    assert(get_fib_number(3) == 2);
+    assert(get_fib_number(5) == 5);
+    assert(get_fib_number(7) == 13);
+    assert(get_fib_number(10) == 55);
+    assert(get_fib_number(12) == 144);
+    assert(get_fib_number(15) == 610);
+    return 0;
 }
