@@ -1,12 +1,16 @@
-#define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
-#include "catch.hpp"
+#include <cassert>
 #include "question4.h"
 
-TEST_CASE("Verify Test Configuration", "verification") {
-	REQUIRE(true == true);
-}
+int main() {
+    int t1 = 1570846218;
+    assert(get_hours(t1) == 2);
+    assert(get_minutes(t1) == 10);
+    assert(get_seconds(t1) == 18);
 
-TEST_CASE("test")
-{
-	REQUIRE(test_config() == true);
+    int t2 = 1570875018;
+    assert(get_hours(t2) == 10);
+    assert(get_minutes(t2) == 10);
+    assert(get_seconds(t2) == 18);
+
+    return 0;
 }
