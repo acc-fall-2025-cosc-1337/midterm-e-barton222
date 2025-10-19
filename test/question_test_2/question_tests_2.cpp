@@ -1,12 +1,15 @@
-#define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
-#include "catch.hpp"
+#include <cassert>
+#include <cmath>
 #include "question2.h"
 
-TEST_CASE("Verify Test Configuration", "verification") {
-	REQUIRE(true == true);
+bool almost_equal(double a, double b, double tolerance = 0.01) {
+    return std::fabs(a - b) < tolerance;
 }
 
-TEST_CASE("test")
-{
-	REQUIRE(test_config() == true);
+int main() {
+    assert(almost_equal(get_fahrenheit(37), 98.6));
+    assert(almost_equal(get_fahrenheit(25), 77));
+    assert(almost_equal(get_fahrenheit(0), 32));
+    assert(almost_equal(get_fahrenheit(-40), -40));
+    return 0;
 }
