@@ -1,12 +1,18 @@
-#define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
-#include "catch.hpp"
+#include <cassert>
+#include <string>
 #include "question1.h"
 
-TEST_CASE("Verify Test Configuration", "verification") {
-	REQUIRE(true == true);
-}
+int main() {
+    assert(gpa_to_letter_grade(4.0) == "A");
+    assert(gpa_to_letter_grade(3.5) == "A");
+    assert(gpa_to_letter_grade(3.49) == "B");
+    assert(gpa_to_letter_grade(3.0) == "B");
+    assert(gpa_to_letter_grade(2.99) == "C");
+    assert(gpa_to_letter_grade(2.0) == "C");
+    assert(gpa_to_letter_grade(1.99) == "D");
+    assert(gpa_to_letter_grade(1.0) == "D");
+    assert(gpa_to_letter_grade(0.99) == "F");
+    assert(gpa_to_letter_grade(0.0) == "F");
 
-TEST_CASE("test")
-{
-	REQUIRE(test_config() == true);
+    return 0;
 }
